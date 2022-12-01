@@ -1,5 +1,4 @@
 defmodule AoC.Utils.Input do
-
   @type reason :: atom() | {atom() | binary()}
 
   @spec get!(DateTime.t()) :: binary()
@@ -28,15 +27,17 @@ defmodule AoC.Utils.Input do
 
   @spec download!(integer(), integer()) :: binary()
   defp download!(year, day) do
-    case response = HTTPoison.get!(
-      "https://adventofcode.com/#{year}/day/#{day}/input",
-      headers!()
-    ) do
+    case response =
+           HTTPoison.get!(
+             "https://adventofcode.com/#{year}/day/#{day}/input",
+             headers!()
+           ) do
       %HTTPoison.Response{
         status_code: 200,
         body: input
       } ->
         input
+
       _ ->
         raise "There was an unexpected response from the server.\n#{inspect(response)}"
     end
@@ -44,5 +45,4 @@ defmodule AoC.Utils.Input do
 
   defp headers!, do: [{"cookie", "session=" <> Application.fetch_env!(:aoc, :session_cookie)}]
   defp cache_dir!, do: Application.fetch_env!(:aoc, :cache_dir) |> Path.expand()
-
 end

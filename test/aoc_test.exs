@@ -6,5 +6,4 @@ defmodule AoCTest do
     AoC.Y2022.D01.part1()
     AoC.Y2022.D01.part2() |> IO.inspect()
   end
-
 end

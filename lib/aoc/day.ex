@@ -19,12 +19,10 @@ defmodule AoC.Day do
         get!(year, day)
         |> parse_input!()
       end
-
     end
   end
 
   @callback parse_input!(binary()) :: term()
   @callback part1(term()) :: term()
   @callback part2(term()) :: term()
-
 end
