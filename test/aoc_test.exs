@@ -13,5 +13,4 @@ defmodule AoCTest do
     AoC.Y2022.D02.part1() |> IO.inspect(label: "Part 1")
     AoC.Y2022.D02.part2() |> IO.inspect(label: "Part 2")
   end
-
 end
