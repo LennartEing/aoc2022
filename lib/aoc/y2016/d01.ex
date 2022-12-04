@@ -20,6 +20,13 @@ defmodule AoC.Y2016.D01 do
   defp dist(%{x: x, y: y}), do: abs(x) + abs(y)
 
   def part2(input) do
+    input
+    |> Enum.reduce({[], %{x: 0, y: 0, h: :N}}, &move_with_hist/2)
+  end
+
+  defp move_with_hist(instr, {hist, pos}) do
+    new_pos = move(instr, pos)
+    {[new_pos | hist], new_pos}
   end
 
   def parse_input!(input) do
