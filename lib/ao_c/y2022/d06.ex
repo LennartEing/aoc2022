@@ -5,20 +5,6 @@ defmodule AoC.Y2022.D06 do
     first_unique!(input)
   end
 
-  @spec start_of_packet_marker_end!(binary(), binary(), non_neg_integer()) :: non_neg_integer()
-  def start_of_packet_marker_end!(input, buffer \\ "", current_pos \\ 0)
-
-  def start_of_packet_marker_end!(<<head::binary-size(1), rest::binary()>>, <<buffer_head::binary-size(2), _last::binary-size(1)>> = buffer, current_pos) do
-    cond do
-      String.graphemes(head <> buffer) == String.graphemes(head <> buffer) |> Enum.uniq() ->
-        current_pos + 1
-      true ->
-        start_of_packet_marker_end!(rest, head <> buffer_head, current_pos + 1)
-    end
-  end
-
-  def start_of_packet_marker_end!(<<head::binary-size(1), rest::binary()>>, buffer, current_pos), do: start_of_packet_marker_end!(rest, head <> buffer, current_pos + 1)
-
   def part2(input) do
     first_unique!(input, 14)
   end
