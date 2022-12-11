@@ -6,6 +6,7 @@ defmodule AoC.Y2022.D01 do
 
   @spec part2([binary()]) :: term()
   def part2(input),
+
     do: input |> Enum.map(&Enum.sum(&1)) |> Enum.sort(:desc) |> Enum.take(3) |> Enum.sum()
 
   @spec parse_input!(binary) :: [binary]
