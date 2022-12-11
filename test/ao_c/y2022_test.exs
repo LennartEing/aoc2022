@@ -25,9 +25,27 @@ defmodule AoC.Y2022Test do
     AoC.Y2022.D04.part2() |> IO.inspect(label: "Part 2")
   end
 
+  @tag :skip
   test "202205" do
     AoC.Y2022.D05.part1() |> IO.inspect(label: "Part 1")
     AoC.Y2022.D05.part1() |> IO.inspect(label: "Part 2")
+  end
+
+  @tag :skip
+  test "202206" do
+    assert AoC.Y2022.D06.part1("mjqjpqmgbljsphdztnvjfqwrcgsmlb", :test) == 7
+    assert AoC.Y2022.D06.part1("bvwbjplbgvbhsrlpgdmjqwftvncz", :test) == 5
+    assert AoC.Y2022.D06.part1("nppdvjthqldpwncqszvftbrmjlhg", :test) == 6
+    assert AoC.Y2022.D06.part1("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg", :test) == 10
+    assert AoC.Y2022.D06.part1("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", :test) == 11
+    AoC.Y2022.D06.part1() |> IO.inspect(label: "Part 1")
+
+    assert AoC.Y2022.D06.part2("mjqjpqmgbljsphdztnvjfqwrcgsmlb", :test) == 19
+    assert AoC.Y2022.D06.part2("bvwbjplbgvbhsrlpgdmjqwftvncz", :test) == 23
+    assert AoC.Y2022.D06.part2("nppdvjthqldpwncqszvftbrmjlhg", :test) == 23
+    assert AoC.Y2022.D06.part2("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg", :test) == 29
+    assert AoC.Y2022.D06.part2("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", :test) == 26
+    AoC.Y2022.D06.part2() |> IO.inspect(label: "Part 2")
   end
 
 end

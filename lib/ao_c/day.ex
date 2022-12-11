@@ -5,10 +5,10 @@ defmodule AoC.Day do
 
       @behaviour AoC.Day
 
-      def part1(), do: part1(input!())
+      def part1(), do: input!() |> part1()
       def part1(input, :test), do: input |> parse_input!() |> part1()
 
-      def part2(), do: part2(input!())
+      def part2(), do: input!() |> part2()
       def part2(input, :test), do: input |> parse_input!() |> part2()
 
       defp input! do
